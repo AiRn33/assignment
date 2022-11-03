@@ -10,5 +10,5 @@ public class TestApplication {
 		SpringApplication.run(TestApplication.class, args);
 	}
 
-	// ss
+	// 초기 셋팅 완료
 }
