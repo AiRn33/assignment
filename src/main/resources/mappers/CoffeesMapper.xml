@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.test.mapper.CoffeesMapper">
+
+    <select id="getCoffeesListXml" resultType="com.test.test.vo.CoffeesVo">
+        SELECT * FROM language;
+    </select>
+
+    <select id="getCoffeeXml" resultType="com.test.test.vo.CoffeesVo">
+        <bind name="language_id" value="language_id"/>
+        SELECT * FROM language where language_id = #{language_id};
+    </select>
+
+    <insert id="postCoffeeXml">
+        <bind name="name" value="name"/>
+        insert into language(name) values (#{name});
+    </insert>
+
+    <update id="updateCoffeeXml">
+        <bind name="arg0" value="arg0"/>
+        <bind name="arg1" value="arg1"/>
+        UPDATE language SET name=#{arg0} where language_id=#{arg1};
+    </update>
+
+    <delete id="deleteCoffeeXml">
+        <bind name="language_id" value="language_id"/>
+        delete from language where language_id=#{language_id}
+    </delete>
+
+</mapper>
